@@ -135,7 +135,7 @@ end;
 procedure TMainForm.SetConnection;
 begin
   Application.CreateForm(TFormKoneksi, FormKoneksi);
-  FormKoneksi.Show;
+  if FormKoneksi.ShowModal <> mrOk then Close;
 end;
 
 procedure TMainForm.Start;

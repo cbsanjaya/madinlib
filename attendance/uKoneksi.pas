@@ -61,7 +61,7 @@ begin
     LCon.Free;
   end;
 
-  if LConnected then Close;
+  if LConnected then ModalResult := mrOk;
 end;
 
 end.
