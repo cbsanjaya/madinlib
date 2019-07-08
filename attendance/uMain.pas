@@ -14,6 +14,7 @@ type
     LabelAddress1: TLabel;
     LabelAddress2: TLabel;
     LabelId: TLabel;
+    LabelSelamat: TLabel;
     procedure FormShow(Sender: TObject);
     procedure EditIdKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
@@ -96,6 +97,7 @@ begin
     LabelName.Caption := dm.QSearch.FieldByName('name').AsString;
     LabelAddress1.Caption := dm.QSearch.FieldByName('address1').AsString;
     LabelAddress2.Caption := dm.QSearch.FieldByName('address2').AsString;
+    LabelSelamat.Visible := True;
     Result:= True;
   end;
 end;
@@ -113,6 +115,7 @@ begin
   LabelName.Caption := '';
   LabelAddress1.Caption := '';
   LabelAddress2.Caption := '';
+  LabelSelamat.Visible := False;
 end;
 
 end.

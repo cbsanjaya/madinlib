@@ -119,6 +119,28 @@ object MainForm: TMainForm
     ParentFont = False
     ExplicitWidth = 85
   end
+  object LabelSelamat: TLabel
+    AlignWithMargins = True
+    Left = 50
+    Top = 335
+    Width = 484
+    Height = 33
+    Margins.Left = 50
+    Margins.Right = 50
+    Margins.Bottom = 20
+    Align = alBottom
+    Alignment = taCenter
+    Caption = 'SELAMAT DATANG'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clGreen
+    Font.Height = -27
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    WordWrap = True
+    ExplicitLeft = 45
+    ExplicitTop = 318
+  end
   object EditId: TEdit
     AlignWithMargins = True
     Left = 60
