@@ -12,4 +12,10 @@ object dm: Tdm
     Left = 120
     Top = 24
   end
+  object QExecute: TMyQuery
+    Connection = Conn
+    Constraints = <>
+    Left = 168
+    Top = 24
+  end
 end

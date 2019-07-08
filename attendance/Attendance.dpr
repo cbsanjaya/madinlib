@@ -4,7 +4,8 @@ uses
   Vcl.Forms,
   uMain in 'uMain.pas' {MainForm},
   uDm in 'uDm.pas' {dm: TDataModule},
-  uKoneksi in 'uKoneksi.pas' {FormKoneksi};
+  uKoneksi in 'uKoneksi.pas' {FormKoneksi},
+  uGuest in 'uGuest.pas' {FormGuest};
 
 {$R *.res}
 

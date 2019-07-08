@@ -18,7 +18,7 @@ type
     procedure EditIdKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     procedure Start;
-    procedure CreateData;
+    procedure CreateData(var GuestId: string);
     procedure SetConnection;
     function SearchGuest(var GuestId: string): Boolean;
   public
@@ -33,16 +33,18 @@ implementation
 
 {$R *.dfm}
 
-uses uDm, uKoneksi;
+uses uDm, uKoneksi, uGuest;
 
 const
   GUEST_PREFIX = 'TMD';
 
 { TMainForm }
 
-procedure TMainForm.CreateData;
+procedure TMainForm.CreateData(var GuestId: string);
 begin
-  ShowMessage('Buat Data Baru');
+  Application.CreateForm(TFormGuest, FormGuest);
+  FormGuest.EditId.Text := GuestId;
+  FormGuest.ShowModal;
 end;
 
 procedure TMainForm.EditIdKeyDown(Sender: TObject; var Key: Word;
@@ -63,7 +65,7 @@ begin
     if not SearchGuest(GuestId) then
     begin
       if GuestId.StartsWith(GUEST_PREFIX, True) then
-        CreateData else
+        CreateData(GuestId) else
         ShowMessage('ID yang Anda Masukkan Tidak ditemukan...');
     end;
 

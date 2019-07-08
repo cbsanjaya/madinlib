@@ -76,7 +76,6 @@ object MainForm: TMainForm
     Font.Style = []
     ParentFont = False
     WordWrap = True
-    ExplicitTop = 190
     ExplicitWidth = 73
   end
   object LabelAddress2: TLabel
@@ -97,7 +96,6 @@ object MainForm: TMainForm
     Font.Style = []
     ParentFont = False
     WordWrap = True
-    ExplicitTop = 242
     ExplicitWidth = 73
   end
   object LabelId: TLabel
@@ -141,6 +139,5 @@ object MainForm: TMainForm
     ParentFont = False
     TabOrder = 0
     OnKeyDown = EditIdKeyDown
-    ExplicitWidth = 593
   end
 end

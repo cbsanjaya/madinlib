@@ -24,9 +24,11 @@ type
   Tdm = class(TDataModule)
     Conn: TMyConnection;
     QSearch: TMyQuery;
+    QExecute: TMyQuery;
   private
     { Private declarations }
   public
+    procedure Execute(ASql: string);
     function Open(ASql: string):TMyQuery;
     function GetConnectionString(AUser: string; APassword: string;
       AHost: string; ADatabase: string; APort: Integer): string;
@@ -74,6 +76,12 @@ begin
   finally
     LConnection.Free;
   end;
+end;
+
+procedure Tdm.Execute(ASql: string);
+begin
+  QExecute.SQL.Text := ASql;
+  QExecute.ExecSQL;
 end;
 
 function Tdm.GetConnectionString(AUser, APassword, AHost, ADatabase: string;
