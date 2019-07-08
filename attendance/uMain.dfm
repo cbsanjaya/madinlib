@@ -119,7 +119,7 @@ object MainForm: TMainForm
     ParentFont = False
     ExplicitWidth = 85
   end
-  object LabelSelamat: TLabel
+  object LabelMotive: TLabel
     AlignWithMargins = True
     Left = 50
     Top = 335
@@ -130,7 +130,7 @@ object MainForm: TMainForm
     Margins.Bottom = 20
     Align = alBottom
     Alignment = taCenter
-    Caption = 'SELAMAT DATANG'
+    Caption = 'ALASAN BERKUNJUNG'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clGreen
     Font.Height = -27
@@ -138,8 +138,7 @@ object MainForm: TMainForm
     Font.Style = [fsBold]
     ParentFont = False
     WordWrap = True
-    ExplicitLeft = 45
-    ExplicitTop = 318
+    ExplicitWidth = 306
   end
   object EditId: TEdit
     AlignWithMargins = True

@@ -14,7 +14,7 @@ type
     LabelAddress1: TLabel;
     LabelAddress2: TLabel;
     LabelId: TLabel;
-    LabelSelamat: TLabel;
+    LabelMotive: TLabel;
     procedure FormShow(Sender: TObject);
     procedure EditIdKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
@@ -35,7 +35,7 @@ implementation
 
 {$R *.dfm}
 
-uses uDm, uKoneksi, uGuest;
+uses uDm, uKoneksi, uGuest, uMotive;
 
 const
   GUEST_PREFIX = 'TMD';
@@ -71,7 +71,14 @@ begin
         ShowMessage('ID yang Anda Masukkan Tidak ditemukan...');
     end
     else
-      SaveLog(GuestId, 'Saking');
+    begin
+      Application.CreateForm(TFormMotive, FormMotive);
+      if FormMotive.ShowModal = mrOk then
+      begin
+        LabelMotive.Caption := FormMotive.Motive;
+        SaveLog(GuestId, FormMotive.Motive);
+     end;
+    end;
   end;
 end;
 
@@ -121,7 +128,6 @@ begin
     LabelName.Caption := dm.QSearch.FieldByName('name').AsString;
     LabelAddress1.Caption := dm.QSearch.FieldByName('address1').AsString;
     LabelAddress2.Caption := dm.QSearch.FieldByName('address2').AsString;
-    LabelSelamat.Visible := True;
     Result:= True;
   end;
 end;
@@ -139,7 +145,7 @@ begin
   LabelName.Caption := '';
   LabelAddress1.Caption := '';
   LabelAddress2.Caption := '';
-  LabelSelamat.Visible := False;
+  LabelMotive.Caption := '';
 end;
 
 end.

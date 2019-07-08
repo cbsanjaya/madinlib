@@ -19,6 +19,7 @@ type
     ButtonSave: TButton;
     ButtonClose: TButton;
     procedure ButtonSaveClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -54,6 +55,12 @@ begin
         mterror, [mbOk], 0);
     end;
   end;
+end;
+
+procedure TFormGuest.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = VK_ESCAPE then Close;
 end;
 
 end.

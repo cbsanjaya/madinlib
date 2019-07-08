@@ -5,7 +5,8 @@ uses
   uMain in 'uMain.pas' {MainForm},
   uDm in 'uDm.pas' {dm: TDataModule},
   uKoneksi in 'uKoneksi.pas' {FormKoneksi},
-  uGuest in 'uGuest.pas' {FormGuest};
+  uGuest in 'uGuest.pas' {FormGuest},
+  uMotive in 'uMotive.pas' {FormMotive};
 
 {$R *.res}
 
