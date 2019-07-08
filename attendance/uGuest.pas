@@ -42,7 +42,7 @@ begin
     LGender := 'M' else LGender := 'F';
 
   LSql:= Format('INSERT INTO cb_guest (id, name, gender, address1, address2, email, phone) ' +
-    'VALUES ("%s","%s","%s","%s","%s","%s", "%s")', [EditId.Text, EditName.Text, LGender,
+    'VALUES ("%s", "%s", "%s", "%s", "%s", "%s", "%s")', [EditId.Text, EditName.Text, LGender,
     EditAddress1.Text, EditAddress2.Text, EditEmail.Text, EditTelephone.Text]);
   try
     dm.Execute( LSql );

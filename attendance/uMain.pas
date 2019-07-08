@@ -22,6 +22,7 @@ type
     procedure CreateData(var GuestId: string);
     procedure SetConnection;
     function SearchGuest(var GuestId: string): Boolean;
+    procedure SaveLog(var GuestId: string; AMotive: string);
   public
     { Public declarations }
   end;
@@ -68,8 +69,9 @@ begin
       if GuestId.StartsWith(GUEST_PREFIX, True) then
         CreateData(GuestId) else
         ShowMessage('ID yang Anda Masukkan Tidak ditemukan...');
-    end;
-
+    end
+    else
+      SaveLog(GuestId, 'Saking');
   end;
 end;
 
@@ -78,6 +80,28 @@ begin
   Start;
   if not(dm.CheckConnectionFile) then
     SetConnection;
+end;
+
+procedure TMainForm.SaveLog(var GuestId: string; AMotive: string);
+var
+  LSql, LGuestType: string;
+begin
+  if GuestId.StartsWith(GUEST_PREFIX, True) then
+    LGuestType := 'Guest' else
+    LGuestType := 'Member';
+
+  LSql:= Format('INSERT INTO cb_attendance (guest_id, guest_type, date_check, ' +
+    'time_check, motive) VALUES ("%s", "%s", CURRENT_DATE, CURRENT_TIME, "%s")',
+    [GuestId, LGUestType, AMotive]);
+  try
+    dm.Execute( LSql );
+  except
+    on E: exception do
+    begin
+      messagedlg('proses penyimpanan gagal,ulangi lagi!!! '#10#13'' + e.Message,
+        mterror, [mbOk], 0);
+    end;
+  end;
 end;
 
 function TMainForm.SearchGuest(var GuestId: string): Boolean;

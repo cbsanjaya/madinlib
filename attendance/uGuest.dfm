@@ -96,7 +96,6 @@ object FormGuest: TFormGuest
     Height = 36
     Align = alBottom
     TabOrder = 7
-    ExplicitTop = 321
     object ButtonSave: TButton
       Left = 192
       Top = 5
