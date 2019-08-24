@@ -38,7 +38,7 @@ implementation
 uses uDm, uKoneksi, uGuest, uMotive;
 
 const
-  GUEST_PREFIX = 'TMD';
+  GUEST_PREFIX = 'PPMD';
 
 { TMainForm }
 
