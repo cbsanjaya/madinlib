@@ -67,10 +67,13 @@ end;
 function Tdm.CheckConnectionFile: Boolean;
 var
   LConnection: TConnection;
+  LPathConnection: string;
 begin
-  if not(FileExists(CONNECTION_FILE)) then Exit(False);
+  LPathConnection := ExtractFilePath(ParamStr(0)) + CONNECTION_FILE;
 
-  LConnection := TConnection.Create(CONNECTION_FILE);
+  if not(FileExists(LPathConnection)) then Exit(False);
+
+  LConnection := TConnection.Create(LPathConnection);
   try
     Result := CheckConnection(LConnection)
   finally
