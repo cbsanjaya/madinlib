@@ -7,7 +7,7 @@
 # Menjalankan Aplikasi.
 
 1. Download File Aplikasi [Attendance.zip](https://github.com/cbsanjaya/madinlib/releases/download/v0.1-attend/Attendance.zip).
-2. Extract File (bisa ditaruh di Folder mana saja tidak ada aturan khusus).
+2. Extract File `Attendance.zip`. (bisa ditaruh di Folder mana saja tidak ada aturan khusus)
 3. Jalankan Aplikasi `Attendance.exe`.
 
 # Pengaturan
@@ -30,6 +30,6 @@ Masukkan daftar alasan kehadiran pada file dengan nama `motive.txt` dan taruh pa
  ```
 
 # Info
-- Kode yang di input untuk daftar hadir akan dikategorikan berdasarkan 3 Huruf Awal Kode, kode dengan awalan `TMD` misal `TMD000001` akan dikategorikan Pengunjung, selain itu akan dikategorikan Anggota Perpus.
+- Kode yang di input untuk daftar hadir akan dikategorikan berdasarkan 3 Huruf Awal Kode, kode dengan awalan `PPMD` misal `PPMD10001` akan dikategorikan Pengunjung, selain itu akan dikategorikan Anggota Perpus.
 - Kode dengan kategori Pengunjung, jika tidak ditemukan dalam Database maka akan dibukakan form untuk pendaftaran Pengunjung Baru berdasarkan Kode yang dimasukkan.
 - File untuk menyimpan Pengaturan Database adalah `mydb.Conn`.
